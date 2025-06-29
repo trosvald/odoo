@@ -125,8 +125,8 @@ jobs:
           no-cache: ${{ inputs.no_cache }}
           # cache-from: type=registry,scope=odoo-${{ inputs.odoo_version }}-${{ matrix.platform }}
           # cache-to: type=registry,mode=max,scope=odoo-${{ inputs.odoo_version }}-${{ matrix.platform }}
-          cache-from: type=registry,ref=hcr.monosense.io/library/odoo:cache-${{ inputs.odoo_version }},scope=odoo-${{ inputs.odoo_version }}-${{ matrix.platform }}
-          cache-to: type=registry,ref=hcr.monosense.io/library/odoo:cache-${{ inputs.odoo_version }},mode=max,scope=odoo-${{ inputs.odoo_version }}-${{ matrix.platform }}
+          cache-from: type=registry,ref=hcr.monosense.io/library/cache/odoo-${{ inputs.odoo_version }},scope=odoo-${{ inputs.odoo_version }}-${{ matrix.platform }}
+          cache-to: type=registry,ref=hcr.monosense.io/library/cache/odoo-${{ inputs.odoo_version }},mode=max,scope=odoo-${{ inputs.odoo_version }}-${{ matrix.platform }}
 
       - name: Export digest
         run: |
@@ -191,7 +191,7 @@ jobs:
         with:
           # list of Docker images to use as base name for tags
           images: |
-            hcr.monosense.io/monosense/${{ env.GITHUB_REPOSITORY_NAME_PART_SLUG }}
+            hcr.monosense.io/library/${{ env.GITHUB_REPOSITORY_NAME_PART_SLUG }}
           # Use predefined flavor with version customization
           flavor: |
             latest=false
