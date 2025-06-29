@@ -125,8 +125,8 @@ jobs:
           no-cache: ${{ inputs.no_cache }}
           # cache-from: type=registry,scope=odoo-${{ inputs.odoo_version }}-${{ matrix.platform }}
           # cache-to: type=registry,mode=max,scope=odoo-${{ inputs.odoo_version }}-${{ matrix.platform }}
-          cache-from: type=registry,ref=hcr.monosense.io/library/cache/odoo-${{ inputs.odoo_version }},scope=odoo-${{ inputs.odoo_version }}-${{ matrix.platform }}
-          cache-to: type=registry,ref=hcr.monosense.io/library/cache/odoo-${{ inputs.odoo_version }},mode=max,scope=odoo-${{ inputs.odoo_version }}-${{ matrix.platform }}
+          cache-from: type=registry,ref=hcr.monosense.io/cache/odoo-${{ inputs.odoo_version }},scope=odoo-${{ inputs.odoo_version }}-${{ matrix.platform }}
+          cache-to: type=registry,ref=hcr.monosense.io/cache/odoo-${{ inputs.odoo_version }},mode=max,scope=odoo-${{ inputs.odoo_version }}-${{ matrix.platform }}
 
       - name: Export digest
         run: |
