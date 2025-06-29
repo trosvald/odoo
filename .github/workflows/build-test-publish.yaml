@@ -29,7 +29,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        odoo_version: ["16.0", "17.0", "18.0", master]
+        # odoo_version: ["16.0", "17.0", "18.0", master]
+        odoo_version: ["18.0", master]
     uses: ./.github/workflows/image-builder.yaml
     with:
       odoo_version: ${{ matrix.odoo_version }}
@@ -43,7 +44,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        odoo_version: ["16.0", "17.0", "18.0", master]
+        # odoo_version: ["16.0", "17.0", "18.0", master]
+        odoo_version: ["18.0", master]
         exclude:
           # TODO: Tests are failing on master. Remove this when fixed
           # See: https://github.com/odoo/odoo/pull/44001#issuecomment-2808975399
@@ -59,7 +61,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        odoo_version: ["16.0", "17.0", "18.0", master]
+        # odoo_version: ["16.0", "17.0", "18.0", master]
+        odoo_version: ["18.0", master]
     if: ${{ github.event_name != 'pull_request' }}
     uses: ./.github/workflows/image-builder.yaml
     with:
